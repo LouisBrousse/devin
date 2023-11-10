@@ -51,7 +51,7 @@ def joueurdevin():
 	while nbre_a_deviner != nbre_propose:
 
 		# Acquérir la proposition du joueur.
-		nbre_propose = int(input(f"Proposition:"))
+		nbre_propose = int(input("Proposition:"))
 
 		# Compter les essais
 		nbre_essais += 1

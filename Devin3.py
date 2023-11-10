@@ -39,10 +39,10 @@ def choix_de_partie():
 def joueurdevin():
 #Jouer au devin, l’utilisateur est le devin.
 	import random
-	nbre_propose = 1000
-	nbre_essais = 0
 
 	# Choisir un nombre entre 0 et 999
+		nbre_propose = 1000
+	nbre_essais = 0
 	from random import randint; nbre_a_deviner = random.randint(0, 1000)
 	print("J'ai choisi un nombre compris entre 1 et 999.", end='\n')
 
@@ -56,7 +56,7 @@ def joueurdevin():
 		# Compter les essais
 		nbre_essais += 1
 
-		# Evaluation de la proposition
+		# Evaluer de la proposition
 		if nbre_propose > nbre_a_deviner:
 			print("Trop grand!")
 		elif nbre_propose < nbre_a_deviner:
@@ -90,23 +90,26 @@ def ordidevin():
 	while verif != 't':
 		# Faire une proposition
 		proposition = (a + b) // 2
-		# Calcule la proposition
+		# Initier le calcul de la proposition
 		print(proposition)
 		# Affiche la proposition
 		nombre_essais += 1
 		# Compte le nombre d'essais
 		ok=False
-		while not ok
+		while not ok:
 			verif = input("Trop (g)rand, trop (p)etit ou (t)rouvé ?")
-		# Vérifie la proposition
-		if verif == 'p':
-			a = proposition
-
-		elif verif == 'g':
-			b = proposition
-
-		elif verif == 't':
-			print("Trouvé!")
+			# Vérifie la proposition
+			if verif == 'p':
+				a = proposition
+				ok = True
+	
+			elif verif == 'g':
+				b = proposition
+				ok = True
+	
+			elif verif == 't':
+				print("Trouvé!")
+				ok = True
 
 	# Affiche le nombre d'essais.
 	print(f"J’ai trouvé en {nombre_essais} essais.")
